@@ -22,10 +22,8 @@ jobs:
       - name: Terraform init
         run: terraform init
 
-      - name: Terraform validate
-        id: validate
-        run: terraform validate
+      - name: Show Destroy plan
+        run: terraform plan -destroy
 
       - name: Terraform destroy
-        if: steps.validate.outcome == 'success'
-        run: terraform destroy
+        run: terraform destroy -auto-approve

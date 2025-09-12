@@ -25,10 +25,8 @@ jobs:
       - name: Terraform validate
         run: terraform validate
 
-      - name: Terraform plan
-        id: plan
+      - name: Show Apply plan
         run: terraform plan -no-color
 
       - name: Terraform apply
-        if: steps.plan.outcome == 'success'
         run: terraform apply -auto-approve
