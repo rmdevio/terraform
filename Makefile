@@ -4,7 +4,7 @@ init:
 
 .PHONY: fmt
 fmt:
-	@terraform fmt
+	@terraform fmt -check
 
 .PHONY: plan
 plan:
@@ -13,3 +13,7 @@ plan:
 .PHONY: apply
 apply:
 	@terraform apply
+
+.PHONY: destroy
+destroy:
+	@terraform destroy
